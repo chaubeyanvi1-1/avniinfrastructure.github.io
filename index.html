@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AVNI Infrastructure — Real Estate & Construction. Building Today For A Better Tomorrow.">
+  <title>AVNI Infrastructure | Real Estate & Construction</title>
+  <style>
+    :root{
+      --black:#0a0a0a;
+      --black2:#121212;
+      --gold:#c9a24a;
+      --gold2:#f0d58a;
+      --white:#f8f7f3;
+      --muted:#b7b4ad;
+      --line:rgba(201,162,74,.25);
+      --max:1180px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Georgia,"Times New Roman",serif;background:var(--black);color:var(--white);line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(92%,var(--max));margin:auto}
+    header{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(10,10,10,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    nav{height:78px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:52px;height:52px;object-fit:contain}
+    .brand strong{font-size:20px;letter-spacing:2px}
+    .brand span{display:block;color:var(--gold2);font:11px Arial,sans-serif;letter-spacing:2px}
+    .links{display:flex;gap:26px;font:13px Arial,sans-serif;letter-spacing:1px;text-transform:uppercase}
+    .links a:hover{color:var(--gold2)}
+    .menu{display:none;background:none;border:1px solid var(--line);color:white;padding:9px 12px}
+    .hero{min-height:100vh;padding:150px 0 80px;display:grid;place-items:center;background:
+      linear-gradient(90deg,rgba(0,0,0,.94),rgba(0,0,0,.52)),
+      url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=85") center/cover}
+    .hero-inner{max-width:820px;margin-right:auto}
+    .eyebrow{font:12px Arial,sans-serif;letter-spacing:4px;color:var(--gold2);text-transform:uppercase;margin-bottom:18px}
+    h1{font-size:clamp(50px,8vw,92px);line-height:.95;letter-spacing:-2px;margin-bottom:24px}
+    h1 em{font-style:normal;color:var(--gold2)}
+    .hero p{font-size:20px;color:#ddd;max-width:650px}
+    .buttons{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+    .btn{padding:14px 24px;border:1px solid var(--gold);font:12px Arial,sans-serif;letter-spacing:1.5px;text-transform:uppercase}
+    .btn.primary{background:var(--gold);color:#111}
+    section{padding:100px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+    .section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:45px}
+    .section-head h2{font-size:clamp(34px,5vw,58px);line-height:1.05}
+    .section-head p{max-width:460px;color:var(--muted)}
+    .gold{color:var(--gold2)}
+    .about{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+    .about img{width:100%;height:520px;object-fit:cover}
+    .about-copy p{color:#c7c4bc;margin:18px 0}
+    .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:28px}
+    .fact{background:var(--black2);padding:24px}
+    .fact strong{display:block;font-size:28px;color:var(--gold2)}
+    .fact span{font:11px Arial,sans-serif;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:linear-gradient(145deg,#151515,#0d0d0d);border:1px solid rgba(201,162,74,.18);padding:30px;min-height:205px}
+    .card .num{font:11px Arial,sans-serif;color:var(--gold2);letter-spacing:2px}
+    .card h3{font-size:24px;margin:28px 0 10px}
+    .card p{color:var(--muted);font-size:15px}
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .project{position:relative;overflow:hidden;min-height:420px;background:#111}
+    .project img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .project:hover img{transform:scale(1.05)}
+    .project-info{position:absolute;left:0;right:0;bottom:0;padding:28px;background:linear-gradient(transparent,rgba(0,0,0,.94))}
+    .project-info small{font:11px Arial,sans-serif;color:var(--gold2);letter-spacing:2px;text-transform:uppercase}
+    .project-info h3{font-size:24px;margin:5px 0}
+    .project-info p{color:#ddd;font-size:14px}
+    .note{margin-top:18px;color:#8f8c85;font:12px Arial,sans-serif}
+    .journey{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .year{border-left:1px solid var(--gold);padding-left:20px}
+    .year strong{font-size:30px;color:var(--gold2)}
+    .year h3{margin:8px 0;font-size:20px}
+    .year p{color:var(--muted);font-size:14px}
+    .director{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center}
+    .portrait{min-height:440px;background:
+      linear-gradient(135deg,rgba(201,162,74,.25),transparent),
+      url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=80") center/cover}
+    .director h2{font-size:46px}
+    .director p{color:var(--muted);margin:16px 0}
+    .role{display:inline-block;border:1px solid var(--line);padding:9px 13px;color:var(--gold2);font:11px Arial,sans-serif;letter-spacing:1px;text-transform:uppercase}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+    .contact h2{font-size:52px;line-height:1.05}
+    .contact-list{margin-top:25px}
+    .contact-item{padding:16px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+    .contact-item small{display:block;color:var(--gold2);font:10px Arial,sans-serif;letter-spacing:2px;text-transform:uppercase}
+    .contact-item div{font-size:18px}
+    form{display:grid;gap:13px}
+    input,textarea{width:100%;background:#121212;border:1px solid #2b2b2b;color:white;padding:15px;font:14px Arial,sans-serif}
+    textarea{min-height:145px;resize:vertical}
+    footer{padding:35px 0;background:#050505;color:#85827c;font:11px Arial,sans-serif;letter-spacing:1px}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    @media(max-width:850px){
+      .links{display:none}.menu{display:block}
+      .about,.director,.contact{grid-template-columns:1fr}
+      .services,.projects{grid-template-columns:1fr 1fr}
+      .journey{grid-template-columns:1fr 1fr}
+      .about img{height:380px}
+    }
+    @media(max-width:560px){
+      nav{height:68px}.brand img{width:44px;height:44px}.brand strong{font-size:16px}
+      .hero{padding-top:120px}.hero p{font-size:17px}
+      section{padding:75px 0}.services,.projects,.journey,.facts{grid-template-columns:1fr}
+      .project{min-height:360px}.contact h2{font-size:40px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#home">
+        <img src="assets/avni-logo.png" alt="AVNI Infrastructure logo">
+        <div><strong>AVNI</strong><span>INFRASTRUCTURE</span></div>
+      </a>
+      <div class="links">
+        <a href="#about">About</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
+      </div>
+      <button class="menu" onclick="document.querySelector('.links').style.display=document.querySelector('.links').style.display==='flex'?'none':'flex'">Menu</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="eyebrow">Real Estate & Construction · Since 1990</div>
+      <h1>Building today<br>for a <em>better tomorrow</em></h1>
+      <p>AVNI Infrastructure is a family-led real estate and construction business built around thoughtful development, practical engineering and long-term value.</p>
+      <div class="buttons"><a class="btn primary" href="#projects">Explore Projects</a><a class="btn" href="#contact">Start a Conversation</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container about">
+    <div class="about-copy">
+      <div class="eyebrow">Our Story</div>
+      <h2>Built on experience<br><span class="gold">and family values</span></h2>
+      <p>Founded in 1990 by <strong>Gaurav Chaubey</strong>, AVNI Infrastructure has grown as a family business with a focus on real estate and construction.</p>
+      <p>The next generation brings a modern technical perspective to the business. Anvi Chaubey combines civil engineering, construction management, project management and sustainable construction knowledge with hands-on business experience.</p>
+      <p>Our approach connects design thinking, engineering discipline, responsible planning and client-focused execution across India and Canada.</p>
+      <div class="facts">
+        <div class="fact"><strong>1990</strong><span>Founded</span></div>
+        <div class="fact"><strong>2</strong><span>Markets · India & Canada</span></div>
+        <div class="fact"><strong>30+</strong><span>Years of foundation</span></div>
+      </div>
+    </div>
+    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85" alt="Contemporary interior">
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head"><div><div class="eyebrow">What We Do</div><h2>Services</h2></div><p>Integrated construction and real estate capabilities for residential, commercial and development-focused projects.</p></div>
+    <div class="services">
+      <article class="card"><span class="num">01</span><h3>Residential Construction</h3><p>Homes, premium residences and villa developments planned around quality, functionality and lasting value.</p></article>
+      <article class="card"><span class="num">02</span><h3>Commercial Construction</h3><p>Commercial spaces with practical planning, project coordination and disciplined execution.</p></article>
+      <article class="card"><span class="num">03</span><h3>Real Estate Development</h3><p>Development planning from early concepts through construction and delivery.</p></article>
+      <article class="card"><span class="num">04</span><h3>Luxury Villas</h3><p>Tailored residential projects with attention to architecture, materials, comfort and landscape.</p></article>
+      <article class="card"><span class="num">05</span><h3>Renovation & Redevelopment</h3><p>Thoughtful upgrades and redevelopment strategies designed around the existing asset.</p></article>
+      <article class="card"><span class="num">06</span><h3>Project Management</h3><p>Planning, budgeting, coordination, timelines and sustainability considerations across the project lifecycle.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-head"><div><div class="eyebrow">Portfolio</div><h2>Project Showcase</h2></div><p>A presentation-ready selection of project categories for the website. Replace these showcase entries with verified project names and details before publishing.</p></div>
+    <div class="projects">
+      <article class="project">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1100&q=85" alt="Modern villa">
+        <div class="project-info"><small>Residential · India</small><h3>Contemporary Villa Collection</h3><p>Private residences combining clean architecture, natural light and efficient planning.</p></div>
+      </article>
+      <article class="project">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1100&q=85" alt="Commercial building">
+        <div class="project-info"><small>Commercial · India</small><h3>Urban Commercial Development</h3><p>Modern commercial space designed around accessibility, functionality and long-term use.</p></div>
+      </article>
+      <article class="project">
+        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1100&q=85" alt="Modern office interior">
+        <div class="project-info"><small>Commercial · Canada</small><h3>Modern Business Centre</h3><p>A contemporary workplace concept focused on efficient planning and adaptable spaces.</p></div>
+      </article>
+    </div>
+    <p class="note">Portfolio note: the three entries above are illustrative website showcase concepts, not claims of completed projects.</p>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="container">
+    <div class="section-head"><div><div class="eyebrow">Our Journey</div><h2>Three decades of<br><span class="gold">building forward</span></h2></div></div>
+    <div class="journey">
+      <div class="year"><strong>1990</strong><h3>Foundation</h3><p>Gaurav Chaubey establishes the family business with a foundation in construction and real estate.</p></div>
+      <div class="year"><strong>2000s</strong><h3>Growth</h3><p>Expansion of project capabilities and a broader approach to residential and commercial development.</p></div>
+      <div class="year"><strong>2010s</strong><h3>Modernisation</h3><p>Greater emphasis on structured project management, contemporary design and efficient execution.</p></div>
+      <div class="year"><strong>Today</strong><h3>Next Generation</h3><p>Anvi brings civil engineering and sustainable construction expertise into the family business.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container director">
+    <div class="portrait"></div>
+    <div>
+      <div class="eyebrow">Leadership</div>
+      <h2>Anvi Chaubey</h2>
+      <span class="role">Director · Project Development & Sustainability</span>
+      <p>Anvi is part of the second generation of the family business. She completed a BTech in Civil Engineering in Mumbai and later an MTech in Construction Management in Canada, with specialization in Project Management and Sustainable Construction.</p>
+      <p>Her role focuses on project planning, development coordination, construction management, sustainability considerations and bringing a contemporary perspective to the company’s work.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container contact">
+    <div>
+      <div class="eyebrow">Get in Touch</div>
+      <h2>Let’s build<br><span class="gold">something lasting</span></h2>
+      <div class="contact-list">
+        <div class="contact-item"><small>Phone</small><div>+1 (867) 991-2352</div></div>
+        <div class="contact-item"><small>Email</small><div>chaubeyanvi1@gmail.com</div></div>
+        <div class="contact-item"><small>Social</small><div>@Anvichaubey</div></div>
+        <div class="contact-item"><small>Office</small><div>Mumbai, Maharashtra, India</div></div>
+      </div>
+    </div>
+    <form onsubmit="event.preventDefault(); alert('Thank you. Please contact AVNI Infrastructure directly by phone or email to continue the conversation.');">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="text" placeholder="Project Type">
+      <textarea placeholder="Tell us a little about your project"></textarea>
+      <button class="btn primary" type="submit">Send Enquiry</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>© 2026 AVNI Infrastructure · Real Estate & Construction</div>
+    <div>Building Today For A Better Tomorrow</div>
+  </div>
+</footer>
+</body>
+</html>
